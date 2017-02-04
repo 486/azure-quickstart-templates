@@ -13,8 +13,10 @@ yum -y install https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9
 yum -y clean all
 
 # Install the Ansible
-echo $(date) " - Installing Ansible"
-yum -y --enablerepo=epel install ansible 
+# echo $(date) " - Installing Ansible"
+# yum -y --enablerepo=epel install ansible 
+git clone git://github.com/ansible/ansible.git --recursive /opt/ansible
+echo "source /opt/ansible/ansible/hacking/env-setup" >> .bashrc
 
 # Disable EPEL to prevent unexpected packages from being pulled in during installation.
 yum-config-manager epel --disable
