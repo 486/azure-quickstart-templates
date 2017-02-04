@@ -25,7 +25,7 @@ runuser -l $SUDOUSER -c "chmod 600 ~/.ssh/id_rsa*"
 
 echo "Configuring SSH ControlPath to use shorter path name"
 
-sed -i -e "s/^# control_path = %(directory)s\/%%h-%%r/control_path = %(directory)s\/%%C/" /etc/ansible/ansible.cfg
+#sed -i -e "s/^# control_path = %(directory)s\/%%h-%%r/control_path = %(directory)s\/%%C/" /etc/ansible/ansible.cfg
 sed -i -e "s/^#host_key_checking = False/host_key_checking = False/" /etc/ansible/ansible.cfg
 sed -i -e "s/^#pty=False/pty=False/" /etc/ansible/ansible.cfg
 
@@ -72,7 +72,7 @@ runuser -l $SUDOUSER -c "git clone https://github.com/openshift/openshift-ansibl
 
 echo "Executing Ansible playbook"
 
-runuser -l $SUDOUSER -c "ansible-playbook openshift-ansible/playbooks/byo/config.yml"
+runuser -l $SUDOUSER -c "source /opt/ansible/hacking/env-setup && ansible-playbook openshift-ansible/playbooks/byo/config.yml"
 
 echo "Modifying sudoers"
 
