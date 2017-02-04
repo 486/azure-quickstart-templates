@@ -16,6 +16,8 @@ yum -y clean all
 # echo $(date) " - Installing Ansible"
 # yum -y --enablerepo=epel install ansible 
 git clone git://github.com/ansible/ansible.git --recursive /opt/ansible
+easy_install pip
+pip install paramiko PyYAML Jinja2 httplib2 six
 echo "source /opt/ansible/ansible/hacking/env-setup" >> .bashrc
 
 # Disable EPEL to prevent unexpected packages from being pulled in during installation.
