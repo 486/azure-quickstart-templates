@@ -25,7 +25,7 @@ yum group install -y "Development Tools"
 # echo -e "\nsource /opt/ansible/hacking/env-setup\n" >> ~/.bashrc
 
 # Install latest from pip way
-yum -y install python-pip
+yum -y install python-devel openssl-devel python-pip
 pip install git+git://github.com/ansible/ansible.git@devel
 
 # Disable EPEL to prevent unexpected packages from being pulled in during installation.
