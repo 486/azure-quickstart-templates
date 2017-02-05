@@ -70,6 +70,14 @@ $MASTER.$DOMAIN
 [nodes]
 $MASTER.$DOMAIN openshift_node_labels="{'region': 'master', 'zone': 'default'}"
 $NODE-[0:${NODELOOP}].$DOMAIN openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
+
+[oo_masters_to_config]
+$MASTER.$DOMAIN
+
+[oo_nodes_to_config]
+$MASTER.$DOMAIN openshift_node_labels="{'region': 'master', 'zone': 'default'}"
+$NODE-[0:${NODELOOP}].$DOMAIN openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
+
 EOF
 
 runuser -l $SUDOUSER -c "git clone https://github.com/openshift/openshift-ansible /home/$SUDOUSER/openshift-ansible"
