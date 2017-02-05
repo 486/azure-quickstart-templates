@@ -19,9 +19,14 @@ git clone git://github.com/ansible/ansible.git --recursive /opt/ansible
 mkdir -p /etc/ansible
 cp /opt/ansible/examples/ansible.cfg /etc/ansible/ansible.cfg
 yum group install -y "Development Tools"
-yum -y install python-devel openssl-devel python-pip
-pip install paramiko PyYAML Jinja2 httplib2 six
-echo -e "\nsource /opt/ansible/ansible/hacking/env-setup\n" >> ~/.bashrc
+# Run from source way
+# yum -y install python-devel openssl-devel python-pip
+# pip install paramiko PyYAML Jinja2 httplib2 six
+# echo -e "\nsource /opt/ansible/hacking/env-setup\n" >> ~/.bashrc
+
+# Install latest from pip way
+yum -y install python-pip
+pip install git+git://github.com/ansible/ansible.git@devel
 
 # Disable EPEL to prevent unexpected packages from being pulled in during installation.
 yum-config-manager epel --disable
