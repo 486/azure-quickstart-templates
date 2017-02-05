@@ -72,7 +72,9 @@ runuser -l $SUDOUSER -c "git clone https://github.com/openshift/openshift-ansibl
 
 echo "Executing Ansible playbook"
 
-runuser -l $SUDOUSER -c "source /opt/ansible/hacking/env-setup && ansible-playbook openshift-ansible/playbooks/byo/config.yml"
+# source /opt/ansible/hacking/env-setup && 
+
+runuser -l $SUDOUSER -c "ansible-playbook openshift-ansible/playbooks/byo/config.yml"
 
 echo "Modifying sudoers"
 
