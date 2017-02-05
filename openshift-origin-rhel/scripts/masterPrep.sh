@@ -26,6 +26,7 @@ yum group install -y "Development Tools"
 
 # Install latest from pip way
 yum -y install python-devel openssl-devel python-pip
+pip install setuptools --upgrade
 pip install git+git://github.com/ansible/ansible.git@devel
 
 # Disable EPEL to prevent unexpected packages from being pulled in during installation.
