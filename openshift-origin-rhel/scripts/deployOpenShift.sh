@@ -45,8 +45,12 @@ ansible_ssh_user=$SUDOUSER
 ansible_become=yes
 openshift_install_examples=true
 deployment_type=origin
-openshift_release=v1.4
-openshift_image_tag=v1.4.0
+# Detected OpenShift version 1.3.3 does not match requested openshift_release 1.4. You may need to adjust your yum
+# repositories, inventory, or run the appropriate OpenShift upgrade playbook.
+# openshift_release=v1.4
+# openshift_image_tag=v1.4.0
+openshift_release=v1.3
+openshift_image_tag=v1.3.0
 docker_udev_workaround=True
 openshift_use_dnsmasq=false
 openshift_override_hostname_check=true
