@@ -71,12 +71,12 @@ $MASTER.$DOMAIN
 $MASTER.$DOMAIN openshift_node_labels="{'region': 'master', 'zone': 'default'}"
 $NODEPREFIX-[0:${NODELOOP}].$DOMAIN openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
 
-[oo_masters_to_config]
-$MASTER.$DOMAIN
+#[oo_masters_to_config]
+#$MASTER.$DOMAIN
 
-[oo_nodes_to_config]
-$MASTER.$DOMAIN openshift_node_labels="{'region': 'master', 'zone': 'default'}"
-$NODEPREFIX-[0:${NODELOOP}].$DOMAIN openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
+#[oo_nodes_to_config]
+#$MASTER.$DOMAIN openshift_node_labels="{'region': 'master', 'zone': 'default'}"
+#$NODEPREFIX-[0:${NODELOOP}].$DOMAIN openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
 
 EOF
 
